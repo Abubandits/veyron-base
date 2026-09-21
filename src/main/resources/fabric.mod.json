@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "veyron",
+  "version": "${version}",
+  "name": "Veyron Base",
+  "description": "Clean ghost-client base for 1.21.11 (Fabric/Yarn) - no modules included",
+  "authors": [
+    "you"
+  ],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.veyron.base.Veyron"
+    ]
+  },
+  "mixins": [
+    "veyron.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "fabric-api": "*",
+    "minecraft": "~1.21.11",
+    "java": ">=21"
+  }
+}

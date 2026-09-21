@@ -1,0 +1,11 @@
+Положи сюда файл bold.otf (SF Pro Display Bold).
+
+Итоговый путь должен быть:
+  src/main/resources/assets/veyron/textures/font/bold.otf
+
+Он подхватывается через:
+  - assets/veyron/font/bold.json (ванильный ttf-провайдер, id шрифта "veyron:bold")
+  - com.veyron.base.font.FontManager (id "bold")
+
+Без файла мод соберется, но шрифт упадет на дефолтный + будет варн в логе.
+SF Pro - проприетарный шрифт Apple, поэтому бинарник не кладу в базу.
