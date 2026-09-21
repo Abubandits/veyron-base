@@ -1,6 +1,10 @@
 package com.veyron.base.module;
 
+import com.veyron.base.setting.Setting;
 import org.lwjgl.glfw.GLFW;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Базовый класс любого модуля. Функций внутри нет -
@@ -37,6 +41,7 @@ public abstract class Module {
 
     private int key = GLFW.GLFW_KEY_UNKNOWN;
     private boolean enabled = false;
+    protected final List<Setting<?>> settings = new ArrayList<>();
 
     public Module(String name, String description, Category category) {
         this(name, description, category, GLFW.GLFW_KEY_UNKNOWN);
@@ -67,6 +72,15 @@ public abstract class Module {
 
     public void setKey(int key) {
         this.key = key;
+    }
+
+    protected <T extends Setting<?>> T addSetting(T setting) {
+        settings.add(setting);
+        return setting;
+    }
+
+    public List<Setting<?>> getSettings() {
+        return settings;
     }
 
     public boolean isEnabled() {
